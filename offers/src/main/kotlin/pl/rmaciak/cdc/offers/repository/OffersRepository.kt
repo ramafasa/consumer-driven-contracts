@@ -1,0 +1,16 @@
+package pl.rmaciak.cdc.offers.repository
+
+import java.math.BigDecimal
+
+interface OffersRepository {
+    fun getById(id: String): Offer
+}
+
+
+data class Offer(
+    val id: String,
+    val name: String,
+    val description: String,
+    val quantity: Int,
+    val price: BigDecimal
+)
