@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
+        mavenLocal()
     }
     dependencies {
         classpath 'org.springframework.cloud:spring-cloud-contract-gradle-plugin:3.0.3'
@@ -17,23 +18,28 @@ plugins {
 
     id 'groovy'
     id 'org.springframework.cloud.contract' version "3.0.3"
+
+    id 'maven-publish'
 }
 
 apply plugin: 'spring-cloud-contract'
 apply plugin: "kotlin-spring"
+apply plugin: 'maven-publish'
 
-group = 'com.example'
+group = 'pl.rmaciak.cdc'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 ext {
-
     set('springCloudVersion', "2020.0.3")
 }
+
+
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -70,6 +76,14 @@ contractTest {
     useJUnitPlatform()
     testLogging {
         exceptionFormat = 'full'
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact verifierStubsJar
+        }
     }
 }
 

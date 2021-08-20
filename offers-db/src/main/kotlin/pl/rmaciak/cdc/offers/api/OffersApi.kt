@@ -29,7 +29,8 @@ private fun Offer.toResponse(): OfferResponse =
         name,
         description,
         quantity,
-        price)
+        price,
+        categoryId)
 
 
 data class OfferResponse(
@@ -37,5 +38,6 @@ data class OfferResponse(
     val name: String,
     val description: String,
     val quantity: Int,
-    val price: BigDecimal
+    val price: BigDecimal,
+    val categoryId: String
 )

@@ -12,5 +12,6 @@ data class Offer(
     val name: String,
     val description: String,
     val quantity: Int,
-    val price: BigDecimal
+    val price: BigDecimal,
+    val categoryId: String
 )

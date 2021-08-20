@@ -14,6 +14,7 @@ class InMemoryOffersRepository : OffersRepository {
             "AirPods PRO",
             "Innowacyjne słuchawki Apple AirPods Pro zapewnią Ci ponadprzeciętne doznania muzyczne w każdej sytuacji.",
             40,
-            BigDecimal.valueOf(919.40)
+            BigDecimal.valueOf(919.40),
+            "124"
         )
 }

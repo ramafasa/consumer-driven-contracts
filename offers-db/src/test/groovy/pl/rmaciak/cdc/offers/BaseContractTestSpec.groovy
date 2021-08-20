@@ -18,7 +18,8 @@ abstract class BaseContractTestSpec extends Specification {
                 "Test offer name",
                 "This is test offer description",
                 10,
-                BigDecimal.valueOf(199.99)
+                BigDecimal.valueOf(199.99),
+                "190"
             )
 
         RestAssuredMockMvc.standaloneSetup(new OffersApi(offersRepository))
